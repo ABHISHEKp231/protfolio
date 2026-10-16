@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#02020a">
+  <meta name="description" content="Abhishek P - Artificial Intelligence & Data Science Graduate | Full Stack & ML Developer specializing in Machine Learning, Web Applications, and Image Processing.">
+  <meta name="keywords" content="Abhishek P, AI, ML, Data Science, Machine Learning, Python, FastAPI, React, OpenCV, Spam Detection, Portfolio">
+  <meta name="author" content="Abhishek P">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abhishek P | AI/ML Engineer & Full Stack Developer">
+  <meta property="og:description" content="Portfolio of Abhishek P - Artificial Intelligence and Data Science graduate with expertise in Machine Learning, Web Development, and Image Processing.">
+
+  <title>Abhishek P | AI/ML Engineer & Full Stack Developer</title>
+
+  <!-- Google Fonts: Playfair Display, Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons for clean SVG rendering -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==============================================
+       1. CYBER PRELOADER GATE & MATRIX INTRO
+  ============================================== -->
+  <div id="preloader" class="preloader">
+    <!-- Interactive Background Canvas for Gate -->
+    <canvas id="preloader-canvas" class="preloader-canvas-element"></canvas>
+
+    <!-- Initial Interactive Gate -->
+    <div id="preloader-gate" class="preloader-gate">
+      <div class="gate-welcome">Welcome to</div>
+      <div class="gate-name">Abhishek's Portfolio</div>
+      <div class="gate-divider"></div>
+      <button id="gate-enter-btn" class="gate-btn" aria-label="Enter Portfolio">
+        <span class="gate-btn-text">ENTER</span>
+        <span class="gate-btn-arrow">&rarr;</span>
+      </button>
+    </div>
+
+    <!-- Live Counter and Loading Sequence -->
+    <div id="preloader-counter" class="preloader-counter counter-hidden">INITIALIZING CORE...</div>
+
+    <!-- Deciphering Name Effect -->
+    <div id="preloader-name" class="preloader-name">
+      <div class="cyber-grid"></div>
+      <div class="cyber-scanner"></div>
+      <div id="name-letters-container" class="name-letters-container">
+        <!-- Generated letters via JS: A B H I S H E K   P -->
+      </div>
+    </div>
+
+    <!-- Progress Bar Tracker -->
+    <div id="preloader-bar-container" class="preloader-bar-container bar-hidden">
+      <div class="preloader-bar-track">
+        <div id="preloader-bar-fill" class="preloader-bar-fill" style="width: 0%"></div>
+      </div>
+      <div id="preloader-bar-label" class="preloader-bar-label">SYSTEM BOOTING 0%</div>
+    </div>
+
+    <!-- Coder Status Indicator -->
+    <div id="preloader-coder" class="preloader-coder">
+      <div class="coder-icon-wrapper">
+        <i class="fa-solid fa-microchip coder-icon"></i>
+      </div>
+      <div class="coder-status">
+        <span class="status-dot"></span>
+        <span id="preloader-status-text">AI CORE: SYNCHRONIZED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       2. FULL-PAGE INTERACTIVE AGENT GRAPH CANVAS
+  ============================================== -->
+  <canvas id="agent-graph-canvas" class="agent-graph-canvas"></canvas>
+
+  <div class="app">
+    <!-- ==============================================
+         3. GLASSMORPHISM NAVBAR
+    ============================================== -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-container">
+        <div class="logo" id="nav-logo">
+          <span class="logo-text">A</span>bhishek
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-menu desktop-only">
+          <button class="nav-link active" data-target="hero">
+            <i class="fa-solid fa-house"></i> Home
+          </button>
+          <button class="nav-link" data-target="dashboard">
+            <i class="fa-solid fa-chart-line"></i> Dashboard
+          </button>
+          <button class="nav-link" data-target="about">
+            <i class="fa-solid fa-user"></i> About
+          </button>
+          <button class="nav-link" data-target="skills">
+            <i class="fa-solid fa-code"></i> Skills
+          </button>
+          <button class="nav-link" data-target="education">
+            <i class="fa-solid fa-graduation-cap"></i> Education
+          </button>
+          <button class="nav-link" data-target="projects">
+            <i class="fa-solid fa-cubes"></i> Projects
+          </button>
+          <button class="nav-link" data-target="achievements">
+            <i class="fa-solid fa-award"></i> Awards
+          </button>
+          <button class="nav-link" data-target="contact">
+            <i class="fa-solid fa-envelope"></i> Contact
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+        </button>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="nav-menu mobile-menu" id="mobile-menu" style="display: none;">
+          <button class="nav-link active" data-target="hero">
+            <i class="fa-solid fa-house"></i> Home
+          </button>
+          <button class="nav-link" data-target="dashboard">
+            <i class="fa-solid fa-chart-line"></i> Dashboard
+          </button>
+          <button class="nav-link" data-target="about">
+            <i class="fa-solid fa-user"></i> About
+          </button>
+          <button class="nav-link" data-target="skills">
+            <i class="fa-solid fa-code"></i> Skills
+          </button>
+          <button class="nav-link" data-target="education">
+            <i class="fa-solid fa-graduation-cap"></i> Education
+          </button>
+          <button class="nav-link" data-target="projects">
+            <i class="fa-solid fa-cubes"></i> Projects
+          </button>
+          <button class="nav-link" data-target="achievements">
+            <i class="fa-solid fa-award"></i> Awards
+          </button>
+          <button class="nav-link" data-target="contact">
+            <i class="fa-solid fa-envelope"></i> Contact
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <!-- ==============================================
+           4. HERO SECTION
+      ============================================== -->
+      <section class="hero" id="hero">
+        <div class="hero-background">
+          <div class="gradient-orb gradient-orb-1"></div>
+          <div class="gradient-orb gradient-orb-2"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="role-pill-badge">
+              <span class="status-dot"></span> Available for AI/ML & Software Roles
+            </div>
+
+            <h1 class="hero-title">
+              <span class="gradient-text">ABHISHEK P</span>
+            </h1>
+
+            <h2 class="hero-subtitle">
+              Artificial Intelligence & Data Science Graduate | Full Stack & ML Developer
+            </h2>
+
+            <p class="hero-description">
+              Motivated Artificial Intelligence and Data Science graduate with hands-on academic project experience in 
+              <span class="highlight">Machine Learning, Web Application Development, and Image Processing</span>. 
+              Skilled in building end-to-end ML applications for spam detection and plant disease classification.
+            </p>
+
+            <!-- Mobile Portrait -->
+            <div class="hero-portrait-mobile">
+              <div class="portrait-wrapper">
+                <img src="images/profile.png" alt="Abhishek P Portrait" class="portrait-image">
+                <div class="portrait-glow"></div>
+              </div>
+            </div>
+
+            <!-- Current Focus / Education Badge -->
+            <div class="hero-current-role">
+              <div class="role-badge glass-effect">
+                <div class="role-title">
+                  <i class="fa-solid fa-robot"></i> B.E. in AI & Data Science (2023–Present)
+                </div>
+                <div class="role-tech">
+                  AJ Institute of Engineering & Management &bull; CGPA: 8.2/10 &bull; Machine Learning &bull; Computer Vision &bull; Full Stack
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="scrollToSection('projects')">
+                <i class="fa-solid fa-rocket"></i> View Projects
+              </button>
+              <button class="btn-secondary" onclick="scrollToSection('dashboard')">
+                <i class="fa-solid fa-chart-pie"></i> Explore Dashboard
+              </button>
+              <button class="btn-secondary" onclick="scrollToSection('contact')">
+                <i class="fa-solid fa-paper-plane"></i> Get in Touch
+              </button>
+            </div>
+
+            <!-- Hero Social Connections -->
+            <div class="hero-socials">
+              <a href="https://github.com/ABHISHEKp231" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/abhi1abhi" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:abhishekalekka10@gmail.com" class="social-link" title="Send Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+917338476514" class="social-link" title="Call Abhishek">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Desktop Portrait -->
+          <div class="hero-portrait">
+            <div class="portrait-wrapper">
+              <img src="images/profile.png" alt="Abhishek P Portrait" class="portrait-image">
+              <div class="portrait-glow"></div>
+              <div class="portrait-badge">
+                <span class="status-dot"></span> AI & DS
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" onclick="scrollToSection('dashboard')">
+          <span>SCROLL DOWN</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           5. INTERACTIVE DASHBOARD & METRICS SECTION
+      ============================================== -->
+      <section class="section dashboard-section" id="dashboard">
+        <div class="section-header">
+          <h2 class="section-title">Performance Dashboard</h2>
+          <p class="section-subtitle">
+            Key analytical metrics, academic benchmarks, and model performance verified from my resume.
+          </p>
+        </div>
+
+        <div class="container">
+          <!-- Main Stat Cards Grid -->
+          <div class="achievements-stats">
+            <div class="stat-card glass-effect">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <div class="stat-value" data-target="96.86" data-suffix="%">0%</div>
+              <div class="stat-label">Peak Model Accuracy</div>
+              <div class="stat-meta">Multinomial Naive Bayes Spam Classifier</div>
+            </div>
+
+            <div class="stat-card glass-effect">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="stat-value" data-target="8.2" data-decimals="1" data-suffix="/10">0.0</div>
+              <div class="stat-label">B.E. Engineering CGPA</div>
+              <div class="stat-meta">AJ Institute of Engineering & Management</div>
+            </div>
+
+            <div class="stat-card glass-effect">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <div class="stat-value" data-target="89.99" data-suffix="%">0%</div>
+              <div class="stat-label">PUC Distinction Score</div>
+              <div class="stat-meta">Sri Ramakunjeshwara PU College</div>
+            </div>
+
+            <div class="stat-card glass-effect">
+              <div class="stat-icon-wrap">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div class="stat-value" data-target="3" data-suffix="">0</div>
+              <div class="stat-label">Industry Certifications</div>
+              <div class="stat-meta">NPTEL Python &bull; Cisco &bull; Deloitte</div>
+            </div>
+          </div>
+
+          <!-- Interactive Dashboard Widgets / Model Comparison Benchmarks -->
+          <div class="dashboard-widgets-grid">
+            <!-- Widget 1: Project Architecture Benchmark -->
+            <div class="dashboard-widget-card glass-effect">
+              <div class="widget-header">
+                <div class="widget-title">
+                  <i class="fa-solid fa-network-wired"></i> ML Architecture Metrics
+                </div>
+                <span class="widget-tag">Resume Verified</span>
+              </div>
+              <div class="widget-body">
+                <div class="metric-progress-item">
+                  <div class="progress-info">
+                    <span class="progress-name">Spam Detection Accuracy (TF-IDF + Naive Bayes)</span>
+                    <span class="progress-score">96.86%</span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-active" style="width: 96.86%;"></div>
+                  </div>
+                </div>
+
+                <div class="metric-progress-item">
+                  <div class="progress-info">
+                    <span class="progress-name">Pre-University Examination (PUC)</span>
+                    <span class="progress-score">89.99%</span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-active progress-teal" style="width: 89.99%;"></div>
+                  </div>
+                </div>
+
+                <div class="metric-progress-item">
+                  <div class="progress-info">
+                    <span class="progress-name">SSLC Secondary School Examination</span>
+                    <span class="progress-score">87.36%</span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-active progress-purple" style="width: 87.36%;"></div>
+                  </div>
+                </div>
+
+                <div class="metric-progress-item">
+                  <div class="progress-info">
+                    <span class="progress-name">Engineering Academic Standing (8.2 CGPA)</span>
+                    <span class="progress-score">82.00%</span>
+                  </div>
+                  <div class="progress-bar-bg">
+                    <div class="progress-bar-active progress-blue" style="width: 82.00%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget 2: Live Core Competency Distribution -->
+            <div class="dashboard-widget-card glass-effect">
+              <div class="widget-header">
+                <div class="widget-title">
+                  <i class="fa-solid fa-layer-group"></i> Resume Tech Stack Stackup
+                </div>
+                <span class="widget-tag">6 Core Domains</span>
+              </div>
+              <div class="widget-body">
+                <div class="domain-pills-grid">
+                  <div class="domain-pill">
+                    <span class="domain-icon"><i class="fa-solid fa-code"></i></span>
+                    <div class="domain-details">
+                      <strong>Programming</strong>
+                      <small>Python, C++, SQL</small>
+                    </div>
+                  </div>
+                  <div class="domain-pill">
+                    <span class="domain-icon"><i class="fa-solid fa-brain"></i></span>
+                    <div class="domain-details">
+                      <strong>Machine Learning</strong>
+                      <small>Scikit-learn, TensorFlow, CNN, KNN, Naive Bayes, TF-IDF</small>
+                    </div>
+                  </div>
+                  <div class="domain-pill">
+                    <span class="domain-icon"><i class="fa-solid fa-eye"></i></span>
+                    <div class="domain-details">
+                      <strong>Data & Vision</strong>
+                      <small>Pandas, NumPy, OpenCV, Image Preprocessing</small>
+                    </div>
+                  </div>
+                  <div class="domain-pill">
+                    <span class="domain-icon"><i class="fa-solid fa-laptop-code"></i></span>
+                    <div class="domain-details">
+                      <strong>Web Stack</strong>
+                      <small>React.js, FastAPI, HTML, CSS, Tailwind CSS</small>
+                    </div>
+                  </div>
+                  <div class="domain-pill">
+                    <span class="domain-icon"><i class="fa-solid fa-database"></i></span>
+                    <div class="domain-details">
+                      <strong>Databases</strong>
+                      <small>SQLite, MySQL</small>
+                    </div>
+                  </div>
+                  <div class="domain-pill">
+                    <span class="domain-icon"><i class="fa-solid fa-toolbox"></i></span>
+                    <div class="domain-details">
+                      <strong>Developer Tools</strong>
+                      <small>Git, GitHub, Jupyter Notebook, VS Code, Docker</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           6. ABOUT ME SECTION
+      ============================================== -->
+      <section class="section about" id="about">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            An entry-level Artificial Intelligence & Data Science engineer with project leadership in machine learning and web systems.
+          </p>
+        </div>
+
+        <div class="about-container">
+          <div class="about-grid">
+            <div class="about-card glass-effect">
+              <h3><i class="fa-solid fa-user-astronaut"></i> Professional Profile</h3>
+              <p>
+                Motivated Artificial Intelligence and Data Science graduate with hands-on academic project experience in 
+                <strong>machine learning, web application development, and image processing</strong>. 
+                Skilled in Python, C++, SQL, and modern web technologies, with demonstrated experience designing and deploying 
+                machine learning applications for spam detection and plant disease classification.
+              </p>
+              <p style="margin-top: 15px;">
+                Seeking an entry-level opportunity to apply technical knowledge, solve practical problems, and contribute to innovative software solutions.
+              </p>
+            </div>
+
+            <div class="about-card glass-effect">
+              <h3><i class="fa-solid fa-compass"></i> Engineering Vision</h3>
+              <p>
+                My academic journey blends rigorous algorithmic theory with practical full-stack deployment. From orchestrating 
+                multinomial Naive Bayes models behind responsive FastAPI and React frontends to crafting CNN-KNN hybrid pipelines 
+                for agricultural image diagnostics, I focus on building robust, high-accuracy, and real-world applicable software.
+              </p>
+              <div class="quick-highlights">
+                <div class="quick-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>End-to-End ML Pipelines (TF-IDF, Naive Bayes, CNN, KNN)</span>
+                </div>
+                <div class="quick-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Full Stack Integration with React.js & FastAPI</span>
+                </div>
+                <div class="quick-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Computer Vision & Image Preprocessing with OpenCV</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Info Cards -->
+          <div class="about-info-grid">
+            <div class="info-card glass-effect">
+              <i class="fa-solid fa-location-dot info-icon"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Mangalore, Karnataka, India</p>
+              </div>
+            </div>
+
+            <div class="info-card glass-effect">
+              <i class="fa-solid fa-graduation-cap info-icon"></i>
+              <div>
+                <h4>Degree</h4>
+                <p>B.E. in AI & Data Science (8.2 CGPA)</p>
+              </div>
+            </div>
+
+            <div class="info-card glass-effect">
+              <i class="fa-solid fa-building-columns info-icon"></i>
+              <div>
+                <h4>Institution</h4>
+                <p>AJ Institute of Engineering & Management</p>
+              </div>
+            </div>
+
+            <div class="info-card glass-effect">
+              <i class="fa-solid fa-envelope info-icon"></i>
+              <div>
+                <h4>Email</h4>
+                <p>abhishekalekka10@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           7. TECHNICAL SKILLS SECTION (RESUME ONLY)
+      ============================================== -->
+      <section class="section skills" id="skills">
+        <div class="section-header">
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">
+            Strictly curated technical proficiencies from my resume across algorithms, data processing, web systems, and tools.
+          </p>
+        </div>
+
+        <div class="skills-container">
+          <!-- Skill Filter Tabs -->
+          <div class="skills-tabs" id="skills-tabs">
+            <button class="skill-tab active" data-category="all">
+              <i class="fa-solid fa-cubes"></i> All Skills
+            </button>
+            <button class="skill-tab" data-category="languages">
+              <i class="fa-solid fa-code"></i> Programming Languages
+            </button>
+            <button class="skill-tab" data-category="ml">
+              <i class="fa-solid fa-brain"></i> Machine Learning
+            </button>
+            <button class="skill-tab" data-category="data">
+              <i class="fa-solid fa-filter"></i> Data Processing
+            </button>
+            <button class="skill-tab" data-category="web">
+              <i class="fa-solid fa-globe"></i> Web Development
+            </button>
+            <button class="skill-tab" data-category="databases">
+              <i class="fa-solid fa-database"></i> Databases
+            </button>
+            <button class="skill-tab" data-category="tools">
+              <i class="fa-solid fa-toolbox"></i> Developer Tools
+            </button>
+          </div>
+
+          <!-- Skills Cards Grid -->
+          <div class="skills-grid" id="skills-grid">
+            <!-- 1. Programming Languages -->
+            <div class="skill-item glass-effect" data-category="languages">
+              <div class="skill-header">
+                <h4><i class="fa-brands fa-python" style="color: #00ffcc;"></i> Python</h4>
+                <span class="skill-badge">Core Language</span>
+              </div>
+              <p class="skill-desc">Primary language for machine learning, data processing, and FastAPI web backend services.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">ML Modeling</span>
+                <span class="skill-pill">FastAPI</span>
+                <span class="skill-pill">Automation</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="languages">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-c" style="color: #0077ff;"></i> C++</h4>
+                <span class="skill-badge">Language</span>
+              </div>
+              <p class="skill-desc">Object-oriented programming, data structures, and algorithmic computational efficiency.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">OOP</span>
+                <span class="skill-pill">Data Structures</span>
+                <span class="skill-pill">Algorithms</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="languages">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-table" style="color: #8a2be2;"></i> SQL</h4>
+                <span class="skill-badge">Query Language</span>
+              </div>
+              <p class="skill-desc">Relational querying, schema design, filtering, joins, aggregation, and analytical queries.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Queries</span>
+                <span class="skill-pill">Aggregation</span>
+                <span class="skill-pill">Relational DB</span>
+              </div>
+            </div>
+
+            <!-- 2. Machine Learning -->
+            <div class="skill-item glass-effect" data-category="ml">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-circle-nodes" style="color: #00ffcc;"></i> Scikit-learn</h4>
+                <span class="skill-badge">ML Library</span>
+              </div>
+              <p class="skill-desc">Model training, evaluation metrics, cross-validation, Naive Bayes, and clustering.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Classifiers</span>
+                <span class="skill-pill">Evaluation</span>
+                <span class="skill-pill">Pipelines</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="ml">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-microchip" style="color: #0077ff;"></i> TensorFlow</h4>
+                <span class="skill-badge">Deep Learning</span>
+              </div>
+              <p class="skill-desc">Neural network training, Keras layers, automated plant leaf feature extraction.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Keras</span>
+                <span class="skill-pill">Deep Learning</span>
+                <span class="skill-pill">Feature Extractor</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="ml">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-diagram-project" style="color: #8a2be2;"></i> CNN & KNN</h4>
+                <span class="skill-badge">Architectures</span>
+              </div>
+              <p class="skill-desc">Convolutional Neural Networks for spatial representation fused with K-Nearest Neighbors for classification.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">CNN</span>
+                <span class="skill-pill">KNN</span>
+                <span class="skill-pill">Model Fusion</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="ml">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-envelope-open-text" style="color: #00d4ff;"></i> Naive Bayes & TF-IDF</h4>
+                <span class="skill-badge">NLP / Stats</span>
+              </div>
+              <p class="skill-desc">Text vectorization using Term Frequency-Inverse Document Frequency and Multinomial Naive Bayes (96.86% accuracy).</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">TF-IDF</span>
+                <span class="skill-pill">Naive Bayes</span>
+                <span class="skill-pill">Spam Detection</span>
+              </div>
+            </div>
+
+            <!-- 3. Data Processing -->
+            <div class="skill-item glass-effect" data-category="data">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-table-columns" style="color: #00ffcc;"></i> Pandas & NumPy</h4>
+                <span class="skill-badge">Data Science</span>
+              </div>
+              <p class="skill-desc">Multidimensional array operations, data manipulation, cleaning, normalization, and statistical analysis.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">DataFrames</span>
+                <span class="skill-pill">Arrays</span>
+                <span class="skill-pill">Feature Prep</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="data">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-image" style="color: #0077ff;"></i> OpenCV & Image Preprocessing</h4>
+                <span class="skill-badge">Computer Vision</span>
+              </div>
+              <p class="skill-desc">Image resizing, noise reduction, color space conversions, and normalization for automated disease classification.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Noise Filtering</span>
+                <span class="skill-pill">Normalization</span>
+                <span class="skill-pill">CV Pipelines</span>
+              </div>
+            </div>
+
+            <!-- 4. Web Development -->
+            <div class="skill-item glass-effect" data-category="web">
+              <div class="skill-header">
+                <h4><i class="fa-brands fa-react" style="color: #00d4ff;"></i> React.js</h4>
+                <span class="skill-badge">Frontend</span>
+              </div>
+              <p class="skill-desc">Interactive SPA components, state management, real-time message classification UI, and analytics dashboards.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Components</span>
+                <span class="skill-pill">Hooks</span>
+                <span class="skill-pill">Analytics UI</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="web">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-bolt" style="color: #00ffcc;"></i> FastAPI</h4>
+                <span class="skill-badge">Backend API</span>
+              </div>
+              <p class="skill-desc">High-performance async Python backend endpoints for real-time model inference and prediction history.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">REST APIs</span>
+                <span class="skill-pill">Inference API</span>
+                <span class="skill-pill">Async Python</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="web">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-paintbrush" style="color: #8a2be2;"></i> HTML, CSS, Tailwind CSS</h4>
+                <span class="skill-badge">Styling & UI</span>
+              </div>
+              <p class="skill-desc">Semantic HTML5, responsive layout design, utility-first CSS styling, and modern glassmorphic web aesthetics.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Tailwind CSS</span>
+                <span class="skill-pill">Responsive</span>
+                <span class="skill-pill">Modern UI</span>
+              </div>
+            </div>
+
+            <!-- 5. Databases -->
+            <div class="skill-item glass-effect" data-category="databases">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-database" style="color: #00ffcc;"></i> SQLite & MySQL</h4>
+                <span class="skill-badge">Databases</span>
+              </div>
+              <p class="skill-desc">Lightweight embedded storage for application history and authentication, plus relational DBMS management.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">SQLite</span>
+                <span class="skill-pill">MySQL</span>
+                <span class="skill-pill">User Auth Storage</span>
+              </div>
+            </div>
+
+            <!-- 6. Developer Tools -->
+            <div class="skill-item glass-effect" data-category="tools">
+              <div class="skill-header">
+                <h4><i class="fa-brands fa-git-alt" style="color: #0077ff;"></i> Git & GitHub</h4>
+                <span class="skill-badge">VCS</span>
+              </div>
+              <p class="skill-desc">Source code version control, branching workflows, pull requests, repository management, and collaboration.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Version Control</span>
+                <span class="skill-pill">CI/CD Workflows</span>
+                <span class="skill-pill">Open Source</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="tools">
+              <div class="skill-header">
+                <h4><i class="fa-brands fa-docker" style="color: #00d4ff;"></i> Docker</h4>
+                <span class="skill-badge">Containerization</span>
+              </div>
+              <p class="skill-desc">Application containerization, reproducible development environments, and deployment packaging.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Containers</span>
+                <span class="skill-pill">Reproducibility</span>
+                <span class="skill-pill">Dockerfiles</span>
+              </div>
+            </div>
+
+            <div class="skill-item glass-effect" data-category="tools">
+              <div class="skill-header">
+                <h4><i class="fa-solid fa-laptop-file" style="color: #8a2be2;"></i> Jupyter Notebook & VS Code</h4>
+                <span class="skill-badge">Dev Environments</span>
+              </div>
+              <p class="skill-desc">Exploratory data analysis, model prototyping, interactive visualization, and full-stack software development.</p>
+              <div class="skill-pill-row">
+                <span class="skill-pill">Jupyter</span>
+                <span class="skill-pill">VS Code</span>
+                <span class="skill-pill">Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           8. EDUCATION TIMELINE SECTION
+      ============================================== -->
+      <section class="section experience" id="education">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">
+            Academic milestones, foundational coursework, and verified institutional track record.
+          </p>
+        </div>
+
+        <div class="experience-container">
+          <div class="experience-timeline">
+            <!-- Item 1: B.E. in AI and Data Science -->
+            <div class="experience-item glass-effect">
+              <div class="experience-marker">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="experience-content">
+                <div class="experience-header">
+                  <h3 class="experience-title">Bachelor of Engineering in Computer Science (AI and Data Science)</h3>
+                  <div class="experience-company">AJ Institute of Engineering & Management</div>
+                </div>
+                <div class="experience-meta">
+                  <div class="meta-item">
+                    <i class="fa-solid fa-calendar"></i> 2023 &ndash; Present
+                  </div>
+                  <div class="meta-item">
+                    <i class="fa-solid fa-location-dot"></i> Mangalore, Karnataka, India
+                  </div>
+                  <div class="meta-item highlight-badge">
+                    <i class="fa-solid fa-star"></i> CGPA: 8.2 / 10
+                  </div>
+                </div>
+                <p class="experience-description">
+                  Pursuing specialized engineering curriculum focused on Artificial Intelligence and Data Science. 
+                  Conducting extensive academic coursework in Machine Learning, Neural Networks, Image Processing, 
+                  Relational Databases, and Modern Web Applications. Spearheading core projects in spam classification and 
+                  plant pathology recognition.
+                </p>
+                <div class="experience-tags">
+                  <span class="tag">AI & Data Science</span>
+                  <span class="tag">Machine Learning</span>
+                  <span class="tag">Computer Vision</span>
+                  <span class="tag">Web Engineering</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Pre-University Course -->
+            <div class="experience-item glass-effect">
+              <div class="experience-marker">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div class="experience-content">
+                <div class="experience-header">
+                  <h3 class="experience-title">Pre-University Course (PUC)</h3>
+                  <div class="experience-company">Sri Ramakunjeshwara PU College, Ramakunja</div>
+                </div>
+                <div class="experience-meta">
+                  <div class="meta-item">
+                    <i class="fa-solid fa-calendar"></i> Graduated 2023
+                  </div>
+                  <div class="meta-item">
+                    <i class="fa-solid fa-location-dot"></i> Ramakunja, Karnataka
+                  </div>
+                  <div class="meta-item highlight-badge">
+                    <i class="fa-solid fa-medal"></i> Percentage: 89.99% (Distinction)
+                  </div>
+                </div>
+                <p class="experience-description">
+                  Completed rigorous higher secondary education with strong analytical foundation in Mathematics, Physics, and 
+                  computational concepts, earning an exceptional 89.99% distinction mark.
+                </p>
+                <div class="experience-tags">
+                  <span class="tag">Distinction</span>
+                  <span class="tag">89.99%</span>
+                  <span class="tag">Mathematics</span>
+                  <span class="tag">Science</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: SSLC High School -->
+            <div class="experience-item glass-effect">
+              <div class="experience-marker">
+                <i class="fa-solid fa-school"></i>
+              </div>
+              <div class="experience-content">
+                <div class="experience-header">
+                  <h3 class="experience-title">Secondary School Leaving Certificate (SSLC)</h3>
+                  <div class="experience-company">Ramakunjeshwara High School, Ramakunja</div>
+                </div>
+                <div class="experience-meta">
+                  <div class="meta-item">
+                    <i class="fa-solid fa-calendar"></i> Completed 2021
+                  </div>
+                  <div class="meta-item">
+                    <i class="fa-solid fa-location-dot"></i> Ramakunja, Karnataka
+                  </div>
+                  <div class="meta-item highlight-badge">
+                    <i class="fa-solid fa-award"></i> Percentage: 87.36% (Distinction)
+                  </div>
+                </div>
+                <p class="experience-description">
+                  Achieved high academic distinction with 87.36% overall marks, laying a strong foundation for computer science 
+                  and technological disciplines.
+                </p>
+                <div class="experience-tags">
+                  <span class="tag">SSLC</span>
+                  <span class="tag">87.36%</span>
+                  <span class="tag">Distinction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           9. FEATURED PROJECTS SECTION
+      ============================================== -->
+      <section class="section projects" id="projects">
+        <div class="section-header">
+          <h2 class="section-title">Academic Projects</h2>
+          <p class="section-subtitle">
+            Hands-on machine learning architectures and web applications built and validated during my studies.
+          </p>
+        </div>
+
+        <div class="projects-container">
+          <div class="projects-grid">
+            <!-- Project 1: Spam Detection in Online Social Networks -->
+            <div class="project-card glass-effect">
+              <div class="project-header">
+                <div>
+                  <h3 class="project-title">Spam Detection in Online Social Networks Using Machine Learning</h3>
+                  <div class="project-subtitle">Full-Stack Web & ML Classification System</div>
+                </div>
+                <span class="project-award">
+                  <i class="fa-solid fa-trophy"></i> 96.86% Accuracy
+                </span>
+              </div>
+
+              <p class="project-description">
+                Developed an end-to-end web-based spam detection application using <strong>TF-IDF feature extraction</strong> 
+                and <strong>Multinomial Naive Bayes</strong> classification, achieving a verified <strong>96.86% accuracy</strong>. 
+                Implemented real-time message classification, file-based batch detection, user authentication, prediction history, 
+                and an interactive analytics dashboard.
+              </p>
+
+              <div class="project-metrics">
+                <span class="metric"><i class="fa-solid fa-bolt"></i> Real-time Classification</span>
+                <span class="metric"><i class="fa-solid fa-file-arrow-up"></i> File-based Detection</span>
+                <span class="metric"><i class="fa-solid fa-lock"></i> User Auth & SQLite</span>
+                <span class="metric"><i class="fa-solid fa-chart-pie"></i> Analytics Dashboard</span>
+              </div>
+
+              <div class="project-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">TF-IDF</span>
+                <span class="tech-tag">Naive Bayes</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="project-btn" onclick="openSpamDemoModal()">
+                  <i class="fa-solid fa-play"></i> Live Simulator
+                </button>
+                <a href="https://github.com/ABHISHEKp231" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fa-brands fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2: AI-Driven Plant Disease Classification -->
+            <div class="project-card glass-effect">
+              <div class="project-header">
+                <div>
+                  <h3 class="project-title">AI-Driven CNN and KNN Fusion for Plant Disease Classification</h3>
+                  <div class="project-subtitle">Computer Vision & Hybrid Deep Learning</div>
+                </div>
+                <span class="project-award" style="background: rgba(0, 255, 204, 0.15); border-color: rgba(0, 255, 204, 0.4); color: #00ffcc;">
+                  <i class="fa-solid fa-brain"></i> CNN + KNN Fusion
+                </span>
+              </div>
+
+              <p class="project-description">
+                Developed an intelligent image classification system using <strong>CNN-based deep feature extraction</strong> and 
+                <strong>KNN classification</strong> to identify plant diseases from leaf imagery. Applied image resizing, noise reduction, 
+                and normalization using Python, TensorFlow/Keras, OpenCV, NumPy, and Matplotlib to support automated plant leaf image 
+                analysis and early disease identification.
+              </p>
+
+              <div class="project-metrics">
+                <span class="metric"><i class="fa-solid fa-camera"></i> OpenCV Preprocessing</span>
+                <span class="metric"><i class="fa-solid fa-dna"></i> Deep Feature Extraction</span>
+                <span class="metric"><i class="fa-solid fa-sliders"></i> Noise Reduction</span>
+                <span class="metric"><i class="fa-solid fa-leaf"></i> Early Diagnosis Workflow</span>
+              </div>
+
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">CNN</span>
+                <span class="tech-tag">KNN</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">Image Preprocessing</span>
+              </div>
+
+              <div class="project-footer">
+                <button class="project-btn" onclick="openPlantDemoModal()">
+                  <i class="fa-solid fa-microscope"></i> Pipeline Architecture
+                </button>
+                <a href="https://github.com/ABHISHEKp231" target="_blank" rel="noopener noreferrer" class="project-btn">
+                  <i class="fa-brands fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           10. ACHIEVEMENTS & CERTIFICATIONS SECTION
+      ============================================== -->
+      <section class="section achievements" id="achievements">
+        <div class="section-header">
+          <h2 class="section-title">Achievements & Certifications</h2>
+          <p class="section-subtitle">
+            Honors, workshop awards, and industry credentials recognized on my resume.
+          </p>
+        </div>
+
+        <div class="achievements-container">
+          <!-- Award Card -->
+          <div class="achievements-grid">
+            <div class="achievement-card glass-effect">
+              <div class="achievement-icon" style="color: #ffd700;">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h3 class="achievement-title">Best Performer Award</h3>
+              <div class="achievement-subtitle">AI Prompt Engineering and Automation Workshop</div>
+              <p class="achievement-description">
+                E26 Media Production Pvt. Ltd. Recognized for excellence in prompt design, AI automation workflows, 
+                and problem-solving during hands-on sessions.
+              </p>
+              <div class="achievement-shine"></div>
+            </div>
+
+            <!-- Certification 1: NPTEL -->
+            <div class="achievement-card glass-effect">
+              <div class="achievement-icon" style="color: #00ffcc;">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <h3 class="achievement-title">The Joy of Computing Using Python</h3>
+              <div class="achievement-subtitle">NPTEL Certification</div>
+              <p class="achievement-description">
+                National Programme on Technology Enhanced Learning (NPTEL). Certified competence in Python programming, algorithmic thinking, and computational logic.
+              </p>
+              <div class="achievement-shine"></div>
+            </div>
+
+            <!-- Certification 2: Cisco -->
+            <div class="achievement-card glass-effect">
+              <div class="achievement-icon" style="color: #0077ff;">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3 class="achievement-title">Introduction to Cybersecurity</h3>
+              <div class="achievement-subtitle">Cisco Networking Academy</div>
+              <p class="achievement-description">
+                Cisco Certified. Comprehensive training in cyber threat identification, secure networking architectures, confidentiality, and data integrity.
+              </p>
+              <div class="achievement-shine"></div>
+            </div>
+
+            <!-- Certification 3: Deloitte -->
+            <div class="achievement-card glass-effect">
+              <div class="achievement-icon" style="color: #8a2be2;">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h3 class="achievement-title">Data Analytics Job Simulation</h3>
+              <div class="achievement-subtitle">Deloitte</div>
+              <p class="achievement-description">
+                Completed industry simulation focused on data quality validation, forensic analytics, insight extraction, and commercial problem analysis.
+              </p>
+              <div class="achievement-shine"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           11. CONTACT SECTION
+      ============================================== -->
+      <section class="section contact" id="contact">
+        <div class="section-header">
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">
+            Open to entry-level software, AI/ML engineering, and web development opportunities. Feel free to connect!
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-content">
+            <!-- Contact Methods Details -->
+            <div class="contact-info">
+              <h3>Contact Information</h3>
+              <div class="contact-methods">
+                <a href="mailto:abhishekalekka10@gmail.com" class="contact-method glass-effect">
+                  <div class="method-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="method-content">
+                    <h4>Email</h4>
+                    <p>abhishekalekka10@gmail.com</p>
+                  </div>
+                </a>
+
+                <a href="tel:+917338476514" class="contact-method glass-effect">
+                  <div class="method-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="method-content">
+                    <h4>Phone</h4>
+                    <p>+91-7338476514</p>
+                  </div>
+                </a>
+
+                <div class="contact-method glass-effect">
+                  <div class="method-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="method-content">
+                    <h4>Location</h4>
+                    <p>Mangalore, Karnataka, India</p>
+                  </div>
+                </div>
+
+                <a href="https://github.com/ABHISHEKp231" target="_blank" rel="noopener noreferrer" class="contact-method glass-effect">
+                  <div class="method-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div class="method-content">
+                    <h4>GitHub</h4>
+                    <p>github.com/ABHISHEKp231</p>
+                  </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/abhi1abhi" target="_blank" rel="noopener noreferrer" class="contact-method glass-effect">
+                  <div class="method-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </div>
+                  <div class="method-content">
+                    <h4>LinkedIn</h4>
+                    <p>linkedin.com/in/abhi1abhi</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container glass-effect">
+              <h3>Send a Message</h3>
+              <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                  <label for="contact-name" style="color: #a0a0a0; font-size: 13px; margin-bottom: 6px;">Your Name</label>
+                  <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Smith" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" style="color: #a0a0a0; font-size: 13px; margin-bottom: 6px;">Your Email</label>
+                  <input type="email" id="contact-email" name="email" placeholder="e.g. alex@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject" style="color: #a0a0a0; font-size: 13px; margin-bottom: 6px;">Subject</label>
+                  <input type="text" id="contact-subject" name="subject" placeholder="e.g. AI/ML Engineering Opportunity" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-message" style="color: #a0a0a0; font-size: 13px; margin-bottom: 6px;">Message</label>
+                  <textarea id="contact-message" name="message" rows="4" placeholder="Hello Abhishek, we reviewed your projects..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="contact-submit-btn">
+                  <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+                <div id="contact-success" class="success-message" style="display: none;">
+                  <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been prepared. Opening your email client...
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==============================================
+         12. FOOTER
+    ============================================== -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-text">
+            <p>
+              Designed & Developed for <strong style="color: #fff;">Abhishek P</strong> &bull; AI & Data Science
+            </p>
+            <div class="footer-subtitle">
+              Mangalore, Karnataka, India &bull; +91-7338476514 &bull; abhishekalekka10@gmail.com
+            </div>
+          </div>
+          <div class="footer-year">
+            <p>&copy; 2026 Abhishek P. All rights reserved.</p>
+          </div>
+        </div>
+        <button class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==============================================
+       13. INTERACTIVE AI AGENT ASSISTANT ("ASK ABHI AGENT")
+  ============================================== -->
+  <div class="agent-chat-wrapper" id="agent-chat-wrapper">
+    <!-- Trigger Button -->
+    <button class="chat-trigger" id="chat-trigger-btn" aria-label="Ask Abhishek's AI Agent">
+      <div class="trigger-icon">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <span class="trigger-text">ASK AGENT</span>
+      <div class="trigger-ping"></div>
+    </button>
+
+    <!-- Chat Window Drawer -->
+    <div class="chat-window glass-effect" id="chat-window" style="display: none;">
+      <div class="chat-header">
+        <div class="header-info">
+          <i class="fa-solid fa-robot bot-icon"></i>
+          <div>
+            <h4>ABHI_AGENT_v1.0</h4>
+            <div class="status-indicator">
+              <span class="dot"></span> ONLINE
+            </div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="chat-minimize-btn" title="Minimize Chat"><i class="fa-solid fa-window-minimize"></i></button>
+          <button id="chat-close-btn" title="Close Chat"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <!-- Messages Stream -->
+      <div class="chat-messages" id="chat-messages">
+        <div class="message-bubble assistant">
+          <div class="bubble-content">
+            System initialized. I am Abhishek's AI Agent. Ask me about Abhishek's skills, ML projects, education, or contact details!
+          </div>
+        </div>
+      </div>
+
+      <!-- Thought Stream Indicator (Dynamic) -->
+      <div class="thought-stream" id="thought-stream" style="display: none; padding: 0 20px 10px;">
+        <div class="thought-text" id="thought-text">> ANALYZING_USER_INPUT...</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Chat Input Form -->
+      <form class="chat-input" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Ask about tech, projects, or contact..." autocomplete="off">
+        <button type="submit" id="chat-send-btn" aria-label="Send query">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       14. LIVE SPAM DETECTION SIMULATOR MODAL
+  ============================================== -->
+  <div class="modal-overlay" id="spam-modal-overlay" style="display: none;">
+    <div class="modal-card glass-effect">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i class="fa-solid fa-shield-virus" style="color: #00ffcc;"></i>
+          <span>Live Spam Classifier Simulator (96.86% Naive Bayes)</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeSpamDemoModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: #b4c8dc; font-size: 14px; margin-bottom: 16px;">
+          Test Abhishek's TF-IDF + Multinomial Naive Bayes model logic right in your browser. Enter any text message below:
+        </p>
+        <textarea id="spam-test-input" rows="3" class="modal-textarea" placeholder="e.g. Congratulations! You've won a $1,000 Walmart gift card. Click here now to claim your cash reward!"></textarea>
+        
+        <div style="display: flex; gap: 10px; margin: 12px 0;">
+          <button class="btn-primary" style="padding: 10px 20px; font-size: 13px;" onclick="runSpamClassificationTest()">
+            <i class="fa-solid fa-bolt"></i> Classify Message
+          </button>
+          <button class="btn-secondary" style="padding: 10px 18px; font-size: 13px;" onclick="loadSpamSample()">
+            Load Spam Sample
+          </button>
+          <button class="btn-secondary" style="padding: 10px 18px; font-size: 13px;" onclick="loadHamSample()">
+            Load Normal Sample
+          </button>
+        </div>
+
+        <div id="spam-result-box" class="spam-result-card" style="display: none;">
+          <div id="spam-result-badge" class="result-badge">RESULT: SPAM DETECTED</div>
+          <div id="spam-result-details" style="font-size: 13px; color: #d0e4f5; margin-top: 8px;">
+            Confidence: 98.4% &bull; Keyword triggers detected: [won, $1,000, claim, reward]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       15. PLANT DISEASE CLASSIFICATION ARCHITECTURE MODAL
+  ============================================== -->
+  <div class="modal-overlay" id="plant-modal-overlay" style="display: none;">
+    <div class="modal-card glass-effect">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i class="fa-solid fa-leaf" style="color: #00ffcc;"></i>
+          <span>CNN + KNN Fusion Architecture Workflow</span>
+        </div>
+        <button class="modal-close-btn" onclick="closePlantDemoModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: #b4c8dc; font-size: 14px; margin-bottom: 16px;">
+          Architectural pipeline engineered by Abhishek P for early plant leaf disease diagnosis:
+        </p>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="step-num">1</span>
+            <div>
+              <strong>OpenCV Preprocessing:</strong> Resizing, noise reduction (Gaussian/Median blur), normalization across RGB color channels.
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-num">2</span>
+            <div>
+              <strong>Deep Feature Extraction:</strong> Leveraging convolutional layers in TensorFlow/Keras to extract spatial leaf lesion feature vectors.
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-num">3</span>
+            <div>
+              <strong>KNN Hybrid Fusion:</strong> Passing high-dimensional feature embeddings to K-Nearest Neighbors for robust neighborhood-based classification.
+            </div>
+          </div>
+          <div class="workflow-step">
+            <span class="step-num">4</span>
+            <div>
+              <strong>Automated Diagnosis Output:</strong> Disease identification with confidence scoring for early agricultural treatment.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
